@@ -1,0 +1,56 @@
+{
+  "apiVersion": "doslab.io/v1",
+  "kind": "Frontend",
+  "metadata": {
+    "name": "service-table"
+  },
+  "spec": {
+    "data": [
+      {
+        "title": "名称",
+        "fixed": "left",
+        "width": "500px",
+        "kind": "link",
+        "row": "metadata.name"
+      },
+      {
+        "title": "项目",
+        "width": "200px",
+        "row": "metadata.namespace"
+      },
+      {
+        "title": "内部访问",
+        "width": "300px",
+        "row": "spec.clusterIP"
+      },
+      {
+        "title": "外部访问",
+        "width": "300px",
+        "row": "spec.ports[0].nodePort"
+      },
+      {
+        "title": "创建时间",
+        "width": "200px",
+        "row": "metadata.creationTimestamp"
+      },
+      {
+        "kind": "action",
+        "fixed": "right",
+        "width": "100px",
+        "title": "操作",
+        "actionLink": [
+          {
+            "label": "编辑",
+            "action": "UPDATE"
+          },
+          {
+            "label": "删除",
+            "action": "DELETE"
+          }
+        ]
+      }
+    ],
+    "type": "table"
+  }
+}
+

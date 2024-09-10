@@ -1,0 +1,13 @@
+{
+  "metadata":{
+    "name":"apps.statefulset-desc"
+  },
+  "apiVersion":"doslab.io/v1",
+  "kind":"Frontend",
+  "spec":{
+    "title": "StatefulSet",
+    "desc": "有状态副本集（StatefulSet）",
+    "type": "description"
+  }
+}
+

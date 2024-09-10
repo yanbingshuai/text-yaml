@@ -1,0 +1,125 @@
+{
+        "apiVersion": "doslab.io/v1",
+        "kind": "Frontend",
+        "metadata": {
+                "name": "doslab.io.virtualmachine-table"
+        },
+        "spec": {
+                "data": [{
+                                "kind": "link",
+                                "title": "名称",
+                                "fixed": "left",
+                                "width": "240px",
+                                "row": "metadata.labels.name"
+                        },
+                        {
+                                "kind": "terminalLink",
+                                "title": "控制台",
+                                "width": "100px",
+                                "terminalLink": {
+                                "icon": "Monitor",
+                                "row": "spec.domain.devices.graphics[0]._port",
+                                "target": "http://133.133.135.134:30301/VmInstance/viewNoVnc?record={port}",
+                                "values": [
+                                      "port"
+                                ]
+                              }
+                        },
+                        {
+                                "title": "启用状态",
+                                "width": "150px",
+                                "row": "spec.status.conditions.state.waiting.reason"
+                        },
+                        {
+                                "title": "CPU",
+                                "width": "100px",
+                                "row": "spec.domain.vcpu.text"
+                        },
+                        {
+                                "title": "内存",
+                                "width": "100px",
+                                "row": "spec.domain.currentMemory.text"
+                        },
+                        {
+                                "title": "IPv4地址",
+                                "width": "200px",
+                                "row": "metadata.labels.host"
+                        },
+                        {
+                                "title": "CPU架构",
+                                "width": "100px",
+                                "row": "spec.domain.os.type._arch"
+                        },
+                        {
+                                "title": "平台",
+                                "width": "150px",
+                                "kind": "icon",
+                                "row": "metadata.annotations.kubectl.kubernetes.io/last-applied-configuration.spec.lifecycle.createAndStartVMFromISO.cdrom"
+                        },
+                        {
+                                "title": "创建时间",
+                                "width": "300px",
+                                "row": "metadata.creationTimestamp"
+                        },
+                        {
+                                "kind": "action",
+                                "title": "操作",
+                                "width": "100px",
+                                "fixed": "right",
+                                "actionLink": [{
+                                                "label": "编辑",
+                                                "action": "UPDATE"
+                                        },
+                                        {
+                                                "label": "启动",
+                                                "action": "start",
+                                                "status": "spec.powerstate"
+                                        },
+                                        {
+                                                "label": "停止",
+                                                "action": "stop",
+                                                "status": "spec.powerstate"
+                                        },
+                                        {
+                                                "label": "重启",
+                                                "action": "reboot",
+                                                "status": "spec.powerstate"
+                                        },
+                                        {
+                                                "label": "暂停",
+                                                "action": "suspend",
+                                                "status": "spec.powerstate"
+                                        },
+                                        {
+                                                "label": "恢复",
+                                                "action": "resume",
+                                                "status": "spec.powerstate"
+                                        },
+                                        {
+                                                "label": "关闭电源",
+                                                "action": "shutdown",
+                                                "status": "spec.powerstate"
+                                        },
+                                        {
+                                                "label": "云主机迁移",
+                                                "action": "transform"
+                                        },
+                                        {
+                                                "label": "创建快照",
+                                                "action": "replay"
+                                        },
+                                        {
+                                                "label": "卸载云盘",
+                                                "action": "UnplugDisk"
+                                        },
+                                        {
+                                                "label": "删除",
+                                                "action": "DELETE"
+                                        }
+                                ]
+                        }
+                ],
+                "type": "table"
+        }
+}
+

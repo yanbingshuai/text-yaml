@@ -1,0 +1,281 @@
+{
+        "apiVersion": "doslab.io/v1",
+        "kind": "Frontend",
+        "metadata": {
+                "name": "all-routes-test"
+        },
+        "spec": {
+                "catalogs": [{
+                                "name": "资源中心",
+                                "path": "/envInfo"
+                        },
+                        {
+                                "name": "平台运维",
+                                "path": "/appMgr"
+                        },
+                        {
+                                "name": "设置",
+                                "path": "/config"
+                        }
+                ],
+                "groups": [{
+                        "name": "云资源池",
+                        "path": "/envInfo/basicInfo"
+                }, {
+                        "name": "硬件设施",
+                        "path": "/envInfo/hardware"
+                }, {
+                        "name": "网络资源",
+                        "path": "/envInfo/resource"
+                }, {
+                        "name": "平台管理",
+                        "path": "/envInfo/platform"
+                }, {
+                        "name": "消息日志",
+                        "path": "/appMgr/log"
+                }, {
+                        "name": "设置",
+                        "path": "/config/config"
+                }],
+                "items": [{
+                                "component": "article/lists/index",
+                                "label": "虚拟资源",
+                                "name": "云主机",
+                                "icon": "desktop-outlined",
+                                "kind": "doslab.io.VirtualMachine",
+                                "path": "/envInfo/basicInfo/vm"
+                        },
+                        {
+                                "component": "article/lists/index",
+                                "name": "云盘",
+                                "label": "虚拟资源",
+                                "icon": "save-outlined",
+                                "kind": "doslab.io.VirtualMachineDisk",
+                                "path": "/envInfo/basicInfo/disk"
+                        },
+                        {
+                                "component": "article/lists/index",
+                                "name": "云盘镜像",
+                                "label": "计算配置",
+                                "icon": "pie-chart-outlined",
+                                "kind": "doslab.io.VirtualMachineDiskImage",
+                                "path": "/envInfo/basicInfo/diskImage"
+                        },
+                        {
+                                "component": "article/lists/index",
+                                "name": "计算规格",
+                                "label": "计算配置",
+                                "icon": "fund-projection-screen-outlined",
+                                "kind": "doslab.io.VirtualMachineSpec",
+                                "path": "/envInfo/basicInfo/specCom"
+                        },
+                        {
+                                "component": "article/lists/index",
+                                "name": "云盘规格",
+                                "label": "计算配置",
+                                "icon": "file-excel-outlined",
+                                "kind": "doslab.io.VirtualMachineDiskSpec",
+                                "path": "/envInfo/basicInfo/specDisk"
+                        },
+                        {
+                                "component": "article/lists/index",
+                                "name": "云主机快照",
+                                "label": "资源服务",
+                                "icon": "folder-view-outlined",
+                                "kind": "doslab.io.VirtualMachineSnapshot",
+                                "structure": "complex",
+                                "path": "/envInfo/basicInfo/vmSnapshot"
+                        },
+                        {
+                                "component": "article/lists/index",
+                                "name": "云盘快照",
+                                "label": "资源服务",
+                                "icon": "folder-view-outlined",
+                                "kind": "doslab.io.VirtualMachineDiskSnapshot",
+                                "structure": "complex",
+                                "path": "/envInfo/basicInfo/diskSnapshot"
+                        },
+                        {
+                                "component": "article/lists/index",
+                                "name": "区域",
+                                "icon": "folder-view-outlined",
+                                "kind": "doslab.io.Zone",
+                                "path": "/envInfo/hardware/zone"
+                        },
+                        {
+                                "component": "article/lists/index",
+                                "name": "集群",
+                                "icon": "folder-view-outlined",
+                                "kind": "doslab.io.Cluster",
+                                "path": "/envInfo/hardware/cluster"
+                        },
+                        {
+                                "component": "article/lists/index",
+                                "name": "物理机",
+                                "icon": "folder-view-outlined",
+                                "kind": "Node",
+                                "path": "/envInfo/hardware/node"
+                        },
+                        {
+                                "component": "article/lists/index",
+                                "name": "主存储",
+                                "icon": "folder-view-outlined",
+                                "kind": "doslab.io.VirtualMachinePool",
+                                "path": "/envInfo/hardware/pools"
+                        },
+                        {
+                                "component": "article/lists/index",
+                                "name": "二层网络",
+                                "kind": "Node",
+                                "icon": "folder-view-outlined",
+                                "path": "/envInfo/resource/layer2Net"
+                        },
+                        {
+                                "component": "article/lists/index",
+                                "name": "VXLAN Pool",
+                                "kind": "kubeovn.io.Subnet",
+                                "icon": "folder-view-outlined",
+                                "path": "/envInfo/resource/vxLAN"
+                        },
+                        {
+                                "component": "article/lists/index",
+                                "name": "共有网络",
+                                "kind": "kubeovn.io.IPPool",
+                                "icon": "folder-view-outlined",
+                                "path": "/envInfo/resource/shareNet"
+                        },
+                        {
+                                "component": "article/lists/index",
+                                "name": "扁平网络",
+                                "kind": "kubeovn.io.IP",
+                                "icon": "folder-view-outlined",
+                                "path": "/envInfo/resource/flatNet"
+                        },
+                        {
+                                "component": "article/lists/index",
+                                "name": "VPC网络",
+                                "kind": "kubeovn.io.VPC",
+                                "icon": "folder-view-outlined",
+                                "path": "/envInfo/resource/vpcNet"
+                        },
+                        {
+                                "component": "article/lists/index",
+                                "name": "VPC路由器",
+                                "kind": "Node",
+                                "icon": "folder-view-outlined",
+                                "path": "/envInfo/resource/vpcrouter"
+                        },
+                        {
+                                "component": "article/lists/index",
+                                "name": "安全组",
+                                "icon": "folder-view-outlined",
+                                "kind": "kubeovn.io.SecurityGroup",
+                                "path": "/envInfo/resource/securityGroup"
+                        },
+                        {
+                                "component": "article/lists/index",
+                                "name": "虚拟IP",
+                                "kind": "kubeovn.io.OvnEip",
+                                "icon": "folder-view-outlined",
+                                "path": "/envInfo/resource/ovnEip"
+                        },
+                        {
+                                "component": "article/lists/index",
+                                "name": "弹性IP",
+                                "kind": "kubeovn.io.OvnFip",
+                                "icon": "folder-view-outlined",
+                                "path": "/envInfo/resource/ovnFip"
+                        },
+                        {
+                                "component": "article/lists/index",
+                                "name": "端口转发",
+                                "kind": "Node",
+                                "icon": "folder-view-outlined",
+                                "path": "/envInfo/resource/node"
+                        },
+                        {
+                                "component": "article/appload/pod/table",
+                                "name": "Deployment",
+                                "kind": "apps.Deployment",
+                                "icon": "folder-view-outlined",
+                                "path": "/envInfo/platform/workload"
+                        },
+                        {       
+                                "component": "article/appload/pod/table",
+                                "name": "StatefulSet",
+                                "kind": "apps.StatefulSet",
+                                "icon": "folder-view-outlined",
+                                "path": "/envInfo/platform/statefulset"
+                        },
+                        {       
+                                "component": "article/appload/pod/table",
+                                "name": "DaemonSet",
+                                "kind": "apps.DaemonSet",
+                                "icon": "folder-view-outlined",
+                                "path": "/envInfo/platform/daemonset"
+                        },
+                        {
+                                "component": "article/appload/pod/table",
+                                "name": "服务",
+                                "kind": "Service",
+                                "icon": "folder-view-outlined",
+                                "path": "/envInfo/platform/service"
+                        },
+                        {
+                                "component": "article/appload/pod/table",
+                                "name": "容器组",
+                                "kind": "Pod",
+                                "icon": "folder-view-outlined",
+                                "path": "/envInfo/platform/pod"
+                        },
+                        {
+                                "component": "article/appload/pod/table",
+                                "name": "保密字典",
+                                "kind": "Secret",
+                                "icon": "folder-view-outlined",
+                                "path": "/envInfo/platform/secret"
+                        },
+                        {
+                                "component": "article/appload/pod/table",
+                                "name": "任务",
+                                "kind": "batch.Job",
+                                "icon": "folder-view-outlined",
+                                "path": "/envInfo/platform/job"
+                        },
+                        {
+                                "component": "article/appload/pod/table",
+                                "name": "定时任务",
+                                "kind": "CronJob",
+                                "icon": "folder-view-outlined",
+                                "path": "/envInfo/platform/cronjob"
+                        },
+                        {
+                                "component": "article/appload/pod/table",
+                                "name": "持久卷",
+                                "kind": "PersistentVolume",
+                                "icon": "folder-view-outlined",
+                                "path": "/envInfo/platform/pv"
+                        },
+                        {
+                                "component": "article/appload/pod/table",
+                                "name": "持久卷声明",
+                                "kind": "PersistentVolumeClaim",
+                                "icon": "folder-view-outlined",
+                                "path": "/envInfo/platform/pvc"
+                        },
+                        {
+                                "component": "article/lists/index",
+                                "name": "操作日志",
+                                "kind": "doslab.io.Log",
+                                "path": "/appMgr/log/node"
+                        },
+                        {
+                                "component": "article/lists/index",
+                                "name": "全局设置",
+                                "kind": "Node",
+                                "path": "/config/config/node"
+                        }
+                ]
+        }
+}
+

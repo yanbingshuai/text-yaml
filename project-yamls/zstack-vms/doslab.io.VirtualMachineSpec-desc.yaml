@@ -1,0 +1,13 @@
+{
+  "metadata":{
+    "name":"doslab.io.virtualmachinespec-desc"
+  },
+  "apiVersion":"doslab.io/v1",
+  "kind":"Frontend",
+  "spec":{
+    "title": "计算规格",
+    "desc": "云主机涉及的CPU数量、内存、网络设置等规格定义。",
+    "type": "description"
+  }
+}
+

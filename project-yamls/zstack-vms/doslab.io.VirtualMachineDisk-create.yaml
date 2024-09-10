@@ -1,0 +1,94 @@
+{
+        "apiVersion": "doslab.io/v1",
+        "kind": "Frontend",
+        "metadata": {
+                "name": "doslab.io.virtualmachinedisk-create"
+        },
+        "spec": {
+                "template": {
+                        "apiVersion": "doslab.io/v1",
+                        "kind": "VirtualMachineDisk"
+                },
+                "stepName": [{
+                        "title": "基础信息"
+                },{
+                        "title": "确认信息"
+                }],
+                "data": {
+                        "step1": {
+                                "group1": {
+                                        "tabKey": "基本信息",
+                                        "constants": {
+                                                "introduction": {
+                                                        "label": "简介",
+                                                        "type": "textbox"
+                                                }
+                                        },
+                                        "variables": {
+                                                "metadata.labels.host": {
+                                                        "kind": "Node",
+                                                        "label": "选择物理机",
+                                                        "row": "status.addresses[0].address",
+                                                        "path": "metadata.labels.host",
+                                                        "name": null,
+                                                        "type": "combox"
+                                                },
+                                                "metadata.name": {
+                                                        "path": "metadata.name",
+                                                        "label": "名称",
+                                                        "regexp": [
+                                                                "A-Za-z"
+                                                        ],
+                                                        "type": "text"
+                                                }
+                                        }
+                                },
+                                "group2": {
+                                        "variables": {
+                                                "spec.nodename": {
+                                                        "path": "spec.nodename",
+                                                        "label": "节点名称",
+                                                        "type": "text"
+                                                },
+                                                "spec.lifecycle.createDisk.type": {
+                                                        "label": "类型",
+                                                        "type": "number",
+                                                        "data": [
+                                                                "localfs", "cephfs"
+                                                        ],
+                                                        "path": "spec.lifecycle.createDisk.type"
+                                                },
+                                                "spec.lifecycle.createDisk.pool": {
+                                                        "kind": "doslab.io.VirtualMachinePool",
+                                                        "label": "选择主存储",
+                                                        "row": "metadata.name",
+                                                        "path": "spec.lifecycle.createDisk.pool",
+                                                        "name": null,
+                                                        "type": "combox"
+                                                },
+                                                "spec.lifecycle.createDisk.capacity": {
+                                                        "kind": "doslab.io.VirtualMachineDiskSpec",
+                                                        "label": "选择云盘规格",
+                                                        "row": "spec.capacity",
+                                                        "path": "spec.lifecycle.createDisk.capacity",
+                                                        "name": null,
+                                                        "type": "combox"
+                                                },
+                                                "spec.lifecycle.createDisk.format": {
+                                                        "data": [
+                                                                "qcow2"
+                                                        ],
+                                                        "label": "云盘格式",
+                                                        "path": "spec.lifecycle.createDisk.format",
+                                                        "type": "radio"
+                                                }
+                                        }
+                                }
+                       },
+                       "step2": {
+                              "group": "confirm"
+                       }
+                }
+        }
+}
+

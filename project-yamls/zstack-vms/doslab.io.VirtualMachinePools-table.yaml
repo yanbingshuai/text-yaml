@@ -1,0 +1,66 @@
+{
+  "apiVersion": "doslab.io/v1",
+  "kind": "Frontend",
+  "metadata": {
+    "name": "doslab.io.virtualmachinepool-table"
+  },
+  "spec": {
+    "data": [
+      {
+        "kind": "link",
+        "title": "名称",
+        "fixed": "left",
+        "width": "300px",
+        "row": "metadata.name"
+      },
+      {
+        "title": "类型",
+        "width": "200px",
+        "row": "spec.pool.type"
+      },
+      {
+        "title": "URL",
+        "width": "300px",
+        "row": "spec.pool.url"
+      },
+      {
+        "title": "容量使用率",
+        "width": "300px",
+        "row": "spec.pool.use"
+      },
+      {
+        "title": "启用状态",
+        "width": "200px",
+        "row": "spec.status.conditions.state.waiting.reason"
+      },
+      {
+        "title": "就绪状态",
+        "width": "200px",
+        "row": "spec.pool.state"
+      },
+      {
+        "title": "创建时间",
+        "width": "300px",
+        "row": "metadata.creationTimestamp"
+      },
+      {
+        "kind": "action",
+        "fixed": "right",
+        "width": "100px",
+        "title": "操作",
+        "actionLink": [
+          {
+            "label": "更新",
+            "action": "UPDATE"
+          },
+          {
+            "label": "删除",
+            "action": "DELETE"
+          }
+        ]
+      }
+    ],
+    "type": "table"
+  }
+}
+

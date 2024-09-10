@@ -1,0 +1,30 @@
+{
+  "metadata": {
+    "name": "doslab.io.virtualmachine-formsearch"
+  },
+  "apiVersion": "doslab.io/v1",
+  "kind": "Frontend",
+  "spec": {
+    "data": {
+      "buttons": [
+                    {
+                        "label": "启动",
+                        "func": "startFunc",
+                        "type": "button"
+                    },
+                    {
+                        "label": "停止",
+                        "func": "stopFunc",
+                        "type": "button"
+                    }
+      ],
+      "items": [{
+        "label": "云主机名称:",
+        "path": "metadata##name",
+        "type": "textbox"
+      }]
+    },
+    "type": "formsearch"
+  }
+}
+

@@ -1,0 +1,91 @@
+{
+        "apiVersion": "doslab.io/v1",
+        "kind": "Frontend",
+        "metadata": {
+                "name": "all-routes-test"
+        },
+        "spec": {
+                "catalogs": [{
+                                "name": "资源中心",
+                                "path": "/envInfo"
+                        }
+                ],
+                "groups": [{
+                        "name": "平台管理",
+                        "path": "/envInfo/platform"
+                }],
+                "items": [
+                        {
+                                "component": "article/appload/pod/table",
+                                "name": "微服务应用",
+                                "kind": "apps.Deployment",
+                                "icon": "folder-view-outlined",
+                                "path": "/envInfo/platform/workload"
+                        },
+                        {
+                                "component": "article/appload/pod/table",
+                                "name": "状态副本集",
+                                "kind": "apps.StatefulSet",
+                                "icon": "folder-view-outlined",
+                                "path": "/envInfo/platform/statefulset"
+                        },
+                        {
+                                "component": "article/appload/pod/table",
+                                "name": "守护进程集",
+                                "kind": "apps.DaemonSet",
+                                "icon": "folder-view-outlined",
+                                "path": "/envInfo/platform/daemonset"
+                        },
+                        {
+                                "component": "article/appload/pod/table",
+                                "name": "服务",
+                                "kind": "Service",
+                                "icon": "folder-view-outlined",
+                                "path": "/envInfo/platform/service"
+                        },
+                        {
+                                "component": "article/appload/pod/table",
+                                "name": "容器组",
+                                "kind": "Pod",
+                                "icon": "folder-view-outlined",
+                                "path": "/envInfo/platform/pod"
+                        },
+                        {
+                                "component": "article/appload/pod/table",
+                                "name": "保密字典",
+                                "kind": "Secret",
+                                "icon": "folder-view-outlined",
+                                "path": "/envInfo/platform/secret"
+                        },
+                        {
+                                "component": "article/appload/pod/table",
+                                "name": "任务",
+                                "kind": "batch.Job",
+                                "icon": "folder-view-outlined",
+                                "path": "/envInfo/platform/job"
+                        },
+                        {
+                                "component": "article/appload/pod/table",
+                                "name": "定时任务",
+                                "kind": "CronJob",
+                                "icon": "folder-view-outlined",
+                                "path": "/envInfo/platform/cronjob"
+                        },
+                        {
+                                "component": "article/appload/pod/table",
+                                "name": "持久卷",
+                                "kind": "PersistentVolume",
+                                "icon": "folder-view-outlined",
+                                "path": "/envInfo/platform/pv"
+                        },
+                        {
+                                "component": "article/appload/pod/table",
+                                "name": "持久卷声明",
+                                "kind": "PersistentVolumeClaim",
+                                "icon": "folder-view-outlined",
+                                "path": "/envInfo/platform/pvc"
+                        }
+                ]
+        }
+}
+

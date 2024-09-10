@@ -1,0 +1,65 @@
+{
+        "apiVersion": "doslab.io/v1",
+        "kind": "Frontend",
+        "metadata": {
+                "name": "doslab.io.virtualmachinespec-create"
+        },
+        "spec": {
+                "template": {
+                        "apiVersion": "doslab.io/v1",
+                        "kind": "VirtualMachineSpec"
+                },
+                "stepName": [{
+                        "title": "基础信息"
+                }],
+                "data": {
+                        "step1": {
+                                "group1": {
+                                                "constants": {
+                                                                   "introduction": {
+                                                                                           "label": "简介",
+                                                                                           "type": "textbox"
+                                                                   }
+                                                },
+                                                "variables": {
+                                                                   "metadata.name": {
+                                                                                           "label": "名称",
+                                                                                           "path": "metadata.name",
+                                                                                           "required": "true",
+                                                                                           "regexp": [
+                                                                                             "A-Za-z"
+                                                                                           ],
+                                                                                           "type": "text"
+                                                                   }
+                                                }
+                                },
+                                "group2": {
+                                                "variables": {
+                                                                   "spec.cpu": {
+                                                                                           "label": "CPU",
+                                                                                           "path": "spec.cpu",
+                                                                                           "required": "true",
+                                                                                           "data": [
+                                                                                             "1","2","4","8","32"
+                                                                                           ],
+                                                                                           "step": 1,
+                                                                                           "type": "number"
+                                                                   },
+                                                                   "spec.memory": {
+                                                                                           "label": "内存(MB)",
+                                                                                           "path": "spec.memory",
+                                                                                           "required": "true",
+                                                                                           "data": [
+                                                                                             "1024","2048","4096","8192","16384","32768"
+                                                                                           ],
+                                                                                           "step": 1,
+                                                                                           "type": "number"
+                                                                   }
+                                                }
+                                }
+
+                        }
+                }
+        }
+}
+

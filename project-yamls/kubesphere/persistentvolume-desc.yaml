@@ -1,0 +1,13 @@
+{
+  "metadata":{
+    "name":"persistentvolume-desc"
+  },
+  "apiVersion":"doslab.io/v1",
+  "kind":"Frontend",
+  "spec":{
+    "title": "持久卷",
+    "desc": "PersistentVolume（持久化卷），是对底层的共享存储的一种抽象。",
+    "type": "description"
+  }
+}
+

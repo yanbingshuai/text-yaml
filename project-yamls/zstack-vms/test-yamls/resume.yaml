@@ -1,0 +1,19 @@
+{
+  "apiVersion": "doslab.io/v1",
+  "kind": "VirtualMachine",
+  "metadata": {
+    "name": "vmtest",
+    "labels": {
+        "host": "133.133.135.134"
+    }
+  },
+  "spec": {
+    "nodeName": "133.133.135.134",
+    "lifecycle": {
+      "ResumeVM": {
+
+      }
+    }
+  }
+}
+

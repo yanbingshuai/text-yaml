@@ -1,0 +1,21 @@
+{
+  "apiVersion": "doslab.io/v1",
+  "kind": "Frontend",
+  "metadata": {
+    "name": "all-dashboard-test"
+  },
+  "spec": {
+    "layout": [{
+      "id": "物理机",
+      "x": 1,
+      "y": 1, 
+      "h": 3,
+      "w": 4
+    }, {
+      "size": 16,
+      "name": "el-icon-location-information",
+      "area": "ZONE-2",
+      "value": "test1"
+    }]
+  }
+}

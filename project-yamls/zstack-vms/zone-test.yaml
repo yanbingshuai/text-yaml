@@ -1,0 +1,11 @@
+{
+  "apiVersion": "doslab.io/v1",
+  "kind": "Zone",
+  "metadata": {
+    "name": "zone-1"
+  },
+  "spec": {
+
+  }
+}
+

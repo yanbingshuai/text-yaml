@@ -1,0 +1,13 @@
+{
+  "metadata":{
+    "name":"doslab.io.zone-desc"
+  },
+  "apiVersion":"doslab.io/v1",
+  "kind":"Frontend",
+  "spec":{
+    "title": "区域",
+    "desc": "云平台内最大的一个资源定义，包括：集群、二层网络、主存储等资源。",
+    "type": "description"
+  }
+}
+

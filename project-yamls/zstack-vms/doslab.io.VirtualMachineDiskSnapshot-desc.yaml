@@ -1,0 +1,13 @@
+{
+  "metadata":{
+    "name":"doslab.io.virtualmachinedisksnapshot-desc"
+  },
+  "apiVersion":"doslab.io/v1",
+  "kind":"Frontend",
+  "spec":{
+    "title": "云盘快照",
+    "desc": "某一时间点云盘的数据状态文件。",
+    "type": "description"
+  }
+}
+

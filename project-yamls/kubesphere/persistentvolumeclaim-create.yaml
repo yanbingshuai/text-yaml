@@ -1,0 +1,27 @@
+{
+    "metadata": {
+        "name": "persistentvolumeclaim-create"
+    },
+    "apiVersion": "doslab.io/v1",
+    "kind": "Frontend",
+    "spec": {
+        "data": {
+            "apiVersion": "v1",
+            "kind": "PersistentVolumeClaim",
+            "metadata": {
+                "name": "example-pvc"
+            },
+            "spec": {
+                "accessModes": [
+                    "ReadWriteOnce"
+                ],
+                "resources": {
+                    "requests": {
+                        "storage": "1Gi"
+                    }
+                }
+            }
+        },
+        "type": "create"
+    }
+}

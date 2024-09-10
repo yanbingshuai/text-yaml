@@ -1,0 +1,44 @@
+{
+  "apiVersion": "doslab.io/v1",
+  "kind": "Frontend",
+  "metadata": {
+    "name": "doslab.io.zone-table"
+  },
+  "spec": {
+    "data": [
+      {
+        "title": "名称",
+        "fixed": "left",
+        "width": "300px",
+        "row": "metadata.name"
+      },
+      {
+        "title": "启用状态",
+        "width": "240px",
+        "row": "spec.domain.vcpu._current"
+      },
+      {
+        "title": "创建时间",
+        "width": "300px",
+        "row": "spec.powerstate"
+      },
+      {
+        "kind": "action",
+        "title": "操作",
+        "width": "200px",
+        "actionLink": [
+          {
+            "label": "更新",
+            "action": "UPDATE"
+          },
+          {
+            "label": "删除云盘",
+            "action": "DELETE"
+          }
+        ]
+      }
+    ],
+    "type": "table"
+  }
+}
+

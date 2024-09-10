@@ -1,0 +1,168 @@
+{
+        "apiVersion": "doslab.io/v1",
+        "kind": "Frontend",
+        "metadata": {
+                "name": "doslab.io.virtualmachine-create"
+        },
+        "spec": {
+                "template": {
+                        "apiVersion": "doslab.io/v1",
+                        "kind": "VirtualMachine"
+                },
+                "stepName": [{
+                        "title": "基础配置"
+                }, {
+                        "title": "资源配置"
+                }],
+                "data": {
+                        "step1": {
+                                "group1": {
+                                        "tabKey": "基本信息",
+                                        "tabList": [{
+                                                "key": "基本信息",
+                                                "tab": "基本信息"
+                                        }],
+                                        "variables": {
+                                                "metadata.name": {
+                                                        "label": "名称",
+                                                        "path": "metadata.labels.name",
+                                                        "regexp": [
+                                                                "A-Za-z"
+                                                        ],
+                                                        "required": "true",
+                                                        "type": "text"
+                                                },
+                                                "spec.nodeName": {
+                                                        "data": {
+                                                                "path": "spec.nodeName",
+                                                                "row": "status.addresses[0].address"
+                                                        },
+                                                        "id": "1",
+                                                        "kind": "Node",
+                                                        "label": "选择物理机",
+                                                        "method": "direct",
+                                                        "path": "spec.nodeName",
+                                                        "required": "true",
+                                                        "row": "status.addresses[0].address",
+                                                        "type": "combox"
+                                                }
+                                        }
+                                },
+                                "group2": {
+                                        "tabKey": "基础规格",
+                                        "tabList": [{
+                                                "key": "基础规格",
+                                                "tab": "基础规格"
+                                        }],
+                                        "variables": {
+                                                "spec.lifecycle.createAndStartVMFromISO.memory": {
+                                                        "data": [{
+                                                                        "path": "spec.lifecycle.createAndStartVMFromISO.memory",
+                                                                        "row": "spec.memory"
+                                                                },
+                                                                {
+                                                                        "path": "spec.lifecycle.createAndStartVMFromISO.vcpus",
+                                                                        "row": "spec.cpu"
+                                                                }
+                                                        ],
+                                                        "id": "2",
+                                                        "kind": "doslab.io.VirtualMachineSpec",
+                                                        "label": "选择计算规格",
+                                                        "message": "计算规格中vcpu默认设置为vcpus=maxvcpus=cores/sockets=threads=1，若修改插槽和线程数，请前往高级选项",
+                                                        "method": "multiple",
+                                                        "path": "spec.lifecycle.createAndStartVMFromISO.memory",
+                                                        "required": "true",
+                                                        "row": "spec.memory",
+                                                        "type": "combox"
+                                                },
+                                                "spec.lifecycle.createAndStartVMFromISO.os_variant": {
+                                                        "label": "操作系统",
+                                                        "options": [{
+                                                                "label": "centos7.0",
+                                                                "value": "centos7.0"
+                                                        }],
+                                                        "path": "spec.lifecycle.createAndStartVMFromISO.os_variant",
+                                                        "required": "true",
+                                                        "type": "select"
+                                                },
+                                                "spec.lifecycle.createAndStartVMFromISO.virt_type": {
+                                                        "data": [{
+                                                                "label": "kvm",
+                                                                "value": "kvm"
+                                                        }],
+                                                        "label": "虚拟化类型",
+                                                        "path": "spec.lifecycle.createAndStartVMFromISO.virt_type",
+                                                        "required": "true",
+                                                        "type": "number"
+                                                }
+                                        }
+                                },
+                                "group3": {
+                                        "kind": "collapse"
+                                }
+                        },
+                        "step2": {
+                                "group1": {
+                                        "variables": {
+                                                "spec.lifecycle.createAndStartVMFromISO.cdrom": {
+                                                        "kind": "doslab.io.VirtualMachineDiskImage",
+                                                        "label": "选择光盘镜像",
+                                                        "options": [{
+                                                                "label": "/var/lib/libvirt/iso/CentOS-7-x86_64-Minimal-1810.iso",
+                                                                "value": "/var/lib/libvirt/iso/CentOS-7-x86_64-Minimal-1810.iso"
+                                                        }],
+                                                        "path": "spec.lifecycle.createAndStartVMFromISO.cdrom",
+                                                        "required": "true",
+                                                        "type": "select"
+                                                },
+                                                "spec.lifecycle.createAndStartVMFromISO.disk": {
+                                                        "data": {
+                                                                "path": "spec.lifecycle.createAndStartVMFromISO.disk",
+                                                                "pin": "spec.volume.format",
+                                                                "row": "spec.volume.current"
+                                                        },
+                                                        "id": "3",
+                                                        "kind": "doslab.io.VirtualMachineDisk",
+                                                        "label": "选择云盘",
+                                                        "message": "请选择未被使用的云盘",
+                                                        "method": "montage",
+                                                        "path": "spec.lifecycle.createAndStartVMFromISO.disk",
+                                                        "required": "true",
+                                                        "type": "combox"
+                                                }
+                                        }
+                                },
+                                "group2": {
+                                        "variables": {
+                                                "spec.lifecycle.createAndStartVMFromISO.graphics": {
+                                                        "label": "VNC协议",
+                                                        "options": [{
+                                                                "label": "vnc,listen=0.0.0.0",
+                                                                "value": "vnc,listen=0.0.0.0"
+                                                        }],
+                                                        "type": "select"
+                                                },
+                                                "spec.lifecycle.createAndStartVMFromISO.network": {
+                                                        "label": "网络配置",
+                                                        "path": "spec.lifecycle.createAndStartVMFromISO.network",
+                                                        "regexp": [
+                                                                "A-Za-z"
+                                                        ],
+                                                        "required": "true",
+                                                        "type": "list"
+                                                },
+                                                "spec.lifecycle.createAndStartVMFromISO.noautoconsole": {
+                                                        "data": [
+                                                                "true",
+                                                                "false"
+                                                        ],
+                                                        "label": "自动打开控制台",
+                                                        "path": "spec.lifecycle.createAndStartVMFromISO.noautoconsole",
+                                                        "type": "panduan"
+                                                }
+                                        }
+                                }
+                        }
+                }
+        }
+}

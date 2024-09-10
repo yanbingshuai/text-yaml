@@ -1,0 +1,18 @@
+{
+  "metadata": {
+    "name": "doslab.io.virtualmachinepool-formsearch"
+  },
+  "apiVersion": "doslab.io/v1",
+  "kind": "Frontend",
+  "spec": {
+    "data": {
+      "items": [{
+        "label": "主存储名称:",
+        "path": "metadata##name",
+        "type": "textbox"
+      }]
+    },
+    "type": "formsearch"
+  }
+}
+

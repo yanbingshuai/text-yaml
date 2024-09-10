@@ -1,0 +1,70 @@
+{
+        "apiVersion": "doslab.io/v1",
+        "kind": "Frontend",
+        "metadata": {
+                "name": "doslab.io.virtualmachinediskimage-create"
+        },
+        "spec": {
+                "template": {
+                        "apiVersion": "doslab.io/v1",
+                        "kind": "VirtualMachineDiskImage"
+                },
+                "stepName": [{
+                        "title": "基础信息"
+                },{
+                        "title": "确认信息"
+                }],
+                "data": {
+                        "step1": {
+                                "group1": {
+                                        "tabKey": "基本信息",
+                                        "constants": {
+                                                "introduction": {
+                                                        "label": "简介",
+                                                        "type": "textbox"
+                                                }
+                                        },
+                                        "variables": {
+                                                "metadata.labels.host": {
+                                                        "kind": "Node",
+                                                        "label": "选择物理机",
+                                                        "row": "status.addresses[0].address",
+                                                        "path": "metadata.labels.host",
+                                                        "name": null,
+                                                        "type": "combox"
+                                                },
+                                                "metadata.name": {
+                                                        "path": "metadata.name",
+                                                        "label": "名称",
+                                                        "regexp": [
+                                                                "A-Za-z"
+                                                        ],
+                                                        "type": "text"
+                                                }
+                                        }
+                                },
+                                "group2": {
+                                        "variables": {
+                                                "spec.nodename": {
+                                                        "path": "spec.nodename",
+                                                        "label": "节点名称",
+                                                        "type": "text"
+                                                },
+                                                "spec.lifecycle.createDisk.type": {
+                                                        "label": "类型",
+                                                        "type": "number",
+                                                        "data": [
+                                                                "localfs"
+                                                        ],
+                                                        "path": "spec.lifecycle.createDisk.type"
+                                                }
+                                        }
+                                }
+                       },
+                       "step2": {
+                              "group": "confirm"
+                       }
+                }
+        }
+}
+

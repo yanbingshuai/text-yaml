@@ -1,0 +1,28 @@
+{
+  "apiVersion": "doslab.io/v1",
+  "kind": "VirtualMachine",
+  "metadata": {
+    "name": "ybs-test4",
+    "labels": {
+        "name": "ybs-test4",
+        "host": "133.133.135.134"
+    }
+  },
+  "spec": {
+    "nodeName": "133.133.135.134",
+    "lifecycle": {
+      "createAndStartVMFromISO": {
+        "virt_type": "kvm",
+        "memory": "1024",
+        "vcpus": "1,maxvcpus=1,cores=1,sockets=1,threads=1",
+        "os_variant": "centos7.0",
+        "cdrom": "/var/lib/libvirt/iso/CentOS-7-x86_64-Minimal-1810.iso",
+        "disk": "/var/lib/libvirt/data/disk-test3/disk-test3,format=qcow2",
+        "network": "type=bridge,source=virbr0",
+        "graphics": "vnc,listen=0.0.0.0",
+        "noautoconsole": true
+      }
+    }
+  }
+}
+

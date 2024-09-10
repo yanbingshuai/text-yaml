@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-novnc
+  namespace: kube-iscas
+  labels:
+    name: kube-novnc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kube-novnc
+  template:
+    metadata:
+      labels:
+        app: kube-novnc
+    spec:
+      nodeSelector:
+        node-role.kubernetes.io/control-plane: ""
+      tolerations:
+        - key: "node-role.kubernetes.io/control-plane"
+          effect: "NoSchedule"
+      containers:
+      - name: novnc
+        image: g-ubjg5602-docker.pkg.coding.net/iscas-system/containers/ceshi:v0.0.1
+        imagePullPolicy: "IfNotPresent"
+        ports:
+        - containerPort: 8081
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kube-novnc
+  namespace: kube-iscas
+spec:
+  selector:
+    name: kube-novnc
+  ports:
+    - protocol: TCP
+      port: 8081
+      nodePort: 30301
+      targetPort: 8081
+      name: novnc
+  type: NodePort

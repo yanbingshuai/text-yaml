@@ -1,0 +1,59 @@
+{
+  "apiVersion": "doslab.io/v1",
+  "kind": "Frontend",
+  "metadata": {
+    "name": "doslab.io.virtualmachinespec-table"
+  },
+  "spec": {
+    "data": [
+      {
+        "title": "名称",
+        "fixed": "left",
+        "width": "300px",
+        "kind": "link",
+        "row": "metadata.name"
+      },
+      {
+        "title": "CPU",
+        "width": "200px",
+        "row": "spec.cpu"
+      },
+      {
+        "title": "内存",
+        "width": "300px",
+        "row": "spec.memory"
+      },
+      {
+        "title": "创建时间",
+        "width": "200px",
+        "row": "metadata.creationTimestamp"
+      },
+      {
+        "kind": "action",
+        "fixed": "right",
+        "width": "100px",
+        "title": "操作",
+        "actionLink": [
+          {
+            "label": "编辑",
+            "action": "UPDATE"
+          },
+          {
+            "label": "启用",
+            "action": "UPDATE"
+          },
+          {
+            "label": "停用",
+            "action": "UPDATE"
+          },
+          {
+            "label": "删除",
+            "action": "DELETE"
+          }
+        ]
+      }
+    ],
+    "type": "table"
+  }
+}
+

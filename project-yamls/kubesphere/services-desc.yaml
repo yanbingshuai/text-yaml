@@ -1,0 +1,13 @@
+{
+  "metadata":{
+    "name":"service-desc"
+  },
+  "apiVersion":"doslab.io/v1",
+  "kind":"Frontend",
+  "spec":{
+    "title": "服务",
+    "desc": "服务(Service)提供一种抽象的方法，将运行在容器组(Pod)上的应用程序公开为网络服务",
+    "type": "description"
+  }
+}
+

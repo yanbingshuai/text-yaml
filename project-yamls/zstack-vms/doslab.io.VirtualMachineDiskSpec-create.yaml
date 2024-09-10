@@ -1,0 +1,57 @@
+{
+        "apiVersion": "doslab.io/v1",
+        "kind": "Frontend",
+        "metadata": {
+                "name": "doslab.io.virtualmachinediskspec-create"
+        },
+        "spec": {
+                "template": {
+                        "apiVersion": "doslab.io/v1",
+                        "kind": "VirtualMachineDiskSpec"
+                },
+                "stepName": [{
+                        "title": "基础信息"
+                }, {
+                        "title": "确认信息"
+                }],
+                "data": {
+                        "step1": {
+                                 "group1": {    
+                                                "constants": {     
+                                                                   "introduction": {       
+                                                                                           "label": "简介",
+                                                                                           "type": "textbox"
+                                                                   }
+                                                },
+                                                "variables": {
+                                                                   "metadata.name": {
+                                                                                           "label": "名称",
+                                                                                           "regexp": [
+                                                                                             "A-Za-z"
+                                                                                           ],
+                                                                                           "path": "metadata.name",
+                                                                                           "type": "text"
+                                                                   }
+                                                }
+                                  },
+                                  "group2": {
+                                                "variables": {
+                                                                   "spec.capacity": {
+                                                                                           "label": "容量",
+                                                                                           "data": [
+                                                                                            "10G", "20G","40G", "60G","100G"
+                                                                                           ],
+                                                                                           "path": "spec.capacity",
+                                                                                           "step": 10,
+                                                                                           "type": "number"
+                                                                   }
+                                             }
+                                  }
+                        },
+                        "step2": {
+                                "group": "confirm"
+                        }
+                }
+        }
+}
+

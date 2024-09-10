@@ -1,0 +1,13 @@
+{
+  "metadata":{
+    "name":"doslab.io.cluster-desc"
+  },
+  "apiVersion":"doslab.io/v1",
+  "kind":"Frontend",
+  "spec":{
+    "title": "集群",
+    "desc": "一组物理机（计算节点）的逻辑集合。",
+    "type": "description"
+  }
+}
+

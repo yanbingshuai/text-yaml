@@ -1,0 +1,28 @@
+{
+    "spec": {
+        "lifecycle": {
+            "createAndStartVMFromISO": {
+                "noautoconsole": true,
+                "network": "type=bridge",
+                "graphics": "vnc,listen=0.0.0.0",
+                "disk": "/var/lib/libvirt/data/disk-test2/disk-test2,format=qcow2",
+                "cdrom": "/var/lib/libvirt/iso/CentOS-7-x86_64-Minimal-1810.iso",
+                "virt_type": "kvm",
+                "os_variant": "centos7.0",
+                "memory": "1024",
+                "vcpus": "1"
+            }
+        },
+        "nodeName": "133.133.135.134"
+    },
+    "metadata": {
+        "name": "39c6c2eb-5d8e",
+        "labels": {
+            "name": "ybs-test4",
+            "host": "133.133.135.134"
+        }
+    },
+    "apiVersion": "doslab.io/v1",
+    "kind": "VirtualMachine"
+}
+

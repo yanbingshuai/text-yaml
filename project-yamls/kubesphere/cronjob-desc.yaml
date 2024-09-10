@@ -1,0 +1,13 @@
+{
+  "metadata":{
+    "name":"cronjob-desc"
+  },
+  "apiVersion":"doslab.io/v1",
+  "kind":"Frontend",
+  "spec":{
+    "title": "定时任务",
+    "desc": "定时任务（CronJob）管理基于时间的任务（Job），可用于运行周期性任务或重复性任务。",
+    "type": "description"
+  }
+}
+

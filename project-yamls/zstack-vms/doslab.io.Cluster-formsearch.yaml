@@ -1,0 +1,18 @@
+{
+  "metadata": {
+    "name": "doslab.io.cluster-formsearch"
+  },
+  "apiVersion": "doslab.io/v1",
+  "kind": "Frontend",
+  "spec": {
+    "data": {
+      "items": [{
+        "label": "集群名称:",
+        "path": "metadata##name",
+        "type": "textbox"
+      }]
+    },
+    "type": "formsearch"
+  }
+}
+

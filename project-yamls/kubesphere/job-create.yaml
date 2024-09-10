@@ -1,0 +1,38 @@
+{
+    "metadata": {
+        "name": "batch.job-create"
+    },
+    "apiVersion": "doslab.io/v1",
+    "kind": "Frontend",
+    "spec": {
+        "data": {
+            "apiVersion": "batch/v1",
+            "kind": "Job",
+            "metadata": {
+                "name": "hello-job"
+            },
+            "spec": {
+                "template": {
+                    "metadata": {
+                        "name": "hello-job"
+                    },
+                    "spec": {
+                        "containers": [
+                            {
+                                "name": "hello",
+                                "image": "busybox",
+                                "args": [
+                                    "/bin/sh",
+                                    "-c",
+                                    "echo Hello, Kubernetes!"
+                                ]
+                            }
+                        ],
+                        "restartPolicy": "OnFailure"
+                    }
+                }
+            }
+        },
+        "type": "create"
+    }
+}

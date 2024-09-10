@@ -1,0 +1,58 @@
+{
+  "apiVersion": "doslab.io/v1",
+  "kind": "Frontend",
+  "metadata": {
+    "name": "node-table"
+  },
+  "spec": {
+    "data": [{
+      "title": "名称",
+      "fixed": "left",
+      "width": "300px",
+      "row": "metadata.name"
+    },
+      {
+        "title": "CPU架构",
+        "width": "150px",
+        "row": "status.nodeInfo.architecture"
+      },
+      {
+        "title": "物理机IP",
+        "width": "200px",
+        "row": "status.addresses[0].address"
+      },
+      {
+        "title": "运行环境",
+        "width": "200px",
+        "row": "status.nodeInfo.containerRuntimeVersion"
+      },
+      {
+        "title": "资源配置(CPU/内存)",
+        "width": "200px",
+        "row": "status.capacity.cpu;/;status.capacity.memory"
+      },
+      {
+        "title": "创建时间",
+        "width": "300px",
+        "row": "metadata.creationTimestamp"
+      },
+      {
+        "kind": "action",
+        "title": "操作",
+        "fixed": "right",
+        "width": "100px",
+        "actionLink": [{
+          "label": "更新",
+          "action": "UPDATE"
+        },
+          {
+            "label": "删除",
+            "action": "DELETE"
+          }
+        ]
+      }
+    ],
+    "type": "table"
+  }
+}
+

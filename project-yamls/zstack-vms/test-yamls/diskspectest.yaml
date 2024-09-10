@@ -1,0 +1,20 @@
+{
+  "apiVersion": "doslab.io/v1",
+  "kind": "VirtualMachineDiskSpec",
+  "metadata": {
+    "name": "disk-spec"
+  },
+  "spec": {
+    "capacity": "10G",
+    "status": {
+        "conditions": {
+              "state": {
+                   "waiting": {
+                          "reason": "Ready"
+                   }
+              }
+        }
+    }
+  }
+}
+

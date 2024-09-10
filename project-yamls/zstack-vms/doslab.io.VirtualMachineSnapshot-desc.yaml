@@ -1,0 +1,13 @@
+{
+  "metadata":{
+    "name":"doslab.io.virtualmachinesnapshot-desc"
+  },
+  "apiVersion":"doslab.io/v1",
+  "kind":"Frontend",
+  "spec":{
+    "title": "云主机快照",
+    "desc": "某一时间点云主机的数据状态文件。",
+    "type": "description"
+  }
+}
+

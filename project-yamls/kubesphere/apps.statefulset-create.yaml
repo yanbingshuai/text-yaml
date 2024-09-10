@@ -1,0 +1,69 @@
+{
+    "metadata": {
+        "name": "apps.statefulset-create"
+    },
+    "apiVersion": "doslab.io/v1",
+    "kind": "Frontend",
+    "spec": {
+        "data": {
+            "apiVersion": "apps/v1",
+            "kind": "StatefulSet",
+            "metadata": {
+                "name": "nginx-statefulset"
+            },
+            "spec": {
+                "serviceName": "nginx-service",
+                "replicas": 3,
+                "selector": {
+                    "matchLabels": {
+                        "app": "nginx"
+                    }
+                },
+                "template": {
+                    "metadata": {
+                        "labels": {
+                            "app": "nginx"
+                        }
+                    },
+                    "spec": {
+                        "containers": [
+                            {
+                                "name": "nginx",
+                                "image": "nginx:latest",
+                                "ports": [
+                                    {
+                                        "containerPort": 80
+                                    }
+                                ],
+                                "volumeMounts": [
+                                    {
+                                        "name": "nginx-persistent-storage",
+                                        "mountPath": "/usr/share/nginx/html"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "volumeClaimTemplates": [
+                    {
+                        "metadata": {
+                            "name": "nginx-persistent-storage"
+                        },
+                        "spec": {
+                            "accessModes": [
+                                "ReadWriteOnce"
+                            ],
+                            "resources": {
+                                "requests": {
+                                    "storage": "1Gi"
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "type": "create"
+    }
+}

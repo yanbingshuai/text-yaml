@@ -1,0 +1,21 @@
+{
+  "apiVersion": "doslab.io/v1",
+  "kind": "VirtualMachineDiskImage",
+  "metadata": {
+    "name": "diskimage-test",
+    "labels": {
+        "host": "133.133.135.134"
+    }
+  },
+  "spec": {
+    "nodeName": "133.133.135.134",
+    "lifecycle": {
+      "CreateDiskImageFromDisk": {
+                "targetPool": "data134",
+                "sourcePool": "data134",
+                "sourceVolume": "disk4"
+      }
+    }
+  }
+}
+

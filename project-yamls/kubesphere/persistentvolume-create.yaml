@@ -1,0 +1,28 @@
+{
+    "metadata": {
+        "name": "persistentvolume-create"
+    },
+    "apiVersion": "doslab.io/v1",
+    "kind": "Frontend",
+    "spec": {
+        "data": {
+            "apiVersion": "v1",
+            "kind": "PersistentVolume",
+            "metadata": {
+                "name": "example-pv"
+            },
+            "spec": {
+                "capacity": {
+                    "storage": "1Gi"
+                },
+                "accessModes": [
+                    "ReadWriteOnce"
+                ],
+                "hostPath": {
+                    "path": "/yourpath"
+                }
+            }
+        },
+        "type": "create"
+    }
+}

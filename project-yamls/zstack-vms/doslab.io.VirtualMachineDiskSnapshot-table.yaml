@@ -1,0 +1,69 @@
+{
+  "apiVersion": "doslab.io/v1",
+  "kind": "Frontend",
+  "metadata": {
+    "name": "doslab.io.virtualmachinedisksnapshot-table"
+  },
+  "spec": {
+    "data": [
+      {
+        "title": "名称",
+        "width": "240px",
+        "kind": "link",
+        "fixed": "left",
+        "row": "metadata.name"
+      },
+      {
+        "title": "快照类型",
+        "width": "200px",
+        "row": "metadata.labels.type"
+      },
+      {
+        "title": "云盘类型",
+        "width": "200px",
+        "row": "spec.volume.format"
+      },
+      {
+        "title": "存储池",
+        "width": "200px",
+        "row": "spec.volume.pool"
+      },
+      {
+        "title": "源自云盘",
+        "width": "200px",
+        "row": "spec.volume.disk"
+      },
+      {
+        "title": "创建时间",
+        "width": "200px",
+        "row": "metadata.creationTimestamp"
+      },
+      {
+        "kind": "action",
+        "title": "操作",
+        "fixed": "right",
+        "width": "100px",
+        "actionLink": [
+          {
+            "label": "编辑",
+            "action": "UPDATE"
+          },
+          {
+            "label": "启用",
+            "action": "start"
+          },
+          {
+            "label": "停用",
+            "action": "stop"
+          },
+          {
+            "label": "删除快照",
+            "action": "DELETE"
+          }
+        ]
+      }
+    ],
+    "type": "table"
+  }
+}
+

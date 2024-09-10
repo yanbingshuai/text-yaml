@@ -1,0 +1,13 @@
+{
+  "metadata":{
+    "name":"doslab.io.virtualmachinepool-desc"
+  },
+  "apiVersion":"doslab.io/v1",
+  "kind":"Frontend",
+  "spec":{
+    "title": "主存储",
+    "desc": "用于存储云主机磁盘文件（包括：根云盘、数据云盘、根云盘快照、数据云盘快照、镜像缓存等）的存储服务器。",
+    "type": "description"
+  }
+}
+

@@ -1,0 +1,69 @@
+{
+  "apiVersion": "doslab.io/v1",
+  "kind": "Frontend",
+  "metadata": {
+    "name": "doslab.io.virtualmachinedisk-table"
+  },
+  "spec": {
+    "data": [
+      { 
+        "title": "名称",
+        "width": "240px",
+        "kind": "link",
+        "fixed": "left",
+        "row": "metadata.name"
+      },
+      { 
+        "title": "真实容量",
+        "width": "150px",
+        "row": "spec.volume.capacity"
+      },
+      { 
+        "title": "容量",
+        "width": "150px",
+        "row": "spec.volume.capacity"
+      },
+      {
+        "title": "主存储",
+        "width": "150px",
+        "row": "spec.volume.pool"
+      },
+      {
+        "title": "启用状态",
+        "width": "150px",
+        "row": "spec.status.conditions.state.waiting.reason"
+      },
+      {
+        "title": "创建时间",
+        "width": "200px",
+        "row": "metadata.creationTimestamp"
+      },
+      {
+        "kind": "action",
+        "title": "更多操作",
+        "fixed": "right",
+        "width": "100px",
+        "actionLink": [
+          {
+            "label": "编辑",
+            "action": "UPDATE"
+          },
+          {
+            "label": "启用",
+            "action": "start"
+          },
+          {
+            "label": "停用",
+            "action": "stop"
+          },
+          {
+            "label": "删除云盘",
+            "action": "DELETE"
+          }
+        ]
+      }
+    ],
+    "type": "table"
+  }
+}
+

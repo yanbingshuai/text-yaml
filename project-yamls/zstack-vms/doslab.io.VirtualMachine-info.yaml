@@ -1,0 +1,77 @@
+{
+  "apiVersion": "doslab.io/v1",
+  "kind": "Frontend",
+  "metadata": {
+    "name": "doslab.io.virtualmachine-info"
+  },
+  "spec": {
+    "col1": {
+              "name": "基本信息",
+              "data": [
+                    {
+                         "label": "名称",
+                         "row": "metadata.labels.name"
+                    },
+                    {
+                         "label": "启用状态",
+                         "row": "spec.status.conditions.state.waiting.reason"
+                    },
+                    {
+                         "label": "所在主机",
+                         "row": "metadata.labels.host"
+                    },
+                    {
+                         "label": "UUID",
+                         "row": "metadata.uid"
+                    },
+                    {
+                         "label": "创建时间",
+                         "row": "metadata.creationTimestamp"
+                    },
+                    {
+                         "label": "CPU",
+                         "row": "spec.domain.vcpu.text"
+                    },
+                    {
+                         "label": "内存",
+                         "row": "spec.domain.currentMemory.text"
+                    },
+                    {
+                         "label": "IPv4地址",
+                         "row": "metadata.labels.host"
+                    },
+                    {
+                         "label": "CPU架构",
+                         "row": "spec.domain.os.type._arch"
+                    }
+              ]
+    },
+    "col2": {
+              "name": "平台信息",
+              "data": [
+                    {
+                         "label": "集群",
+                         "row": "spec.clus"
+                    },
+                    {
+                         "label": "主存储",
+                         "row": "spec.clus"
+                    }
+              ]
+    },
+    "col3": {
+              "name": "配置信息",
+              "data": [
+                    {
+                         "label": "计算规格",
+                         "row": "spec.clus"
+                    },
+                    {
+                         "label": "镜像",
+                         "row": "spec.clus"
+                    }
+              ]
+    }
+  }
+}
+

@@ -1,0 +1,26 @@
+{
+  "apiVersion": "doslab.io/v1",
+  "kind": "VirtualMachineDiskSnapshot",
+  "metadata": {
+    "name": "ybs-test11",
+    "labels": {
+        "host": "133.133.135.134",
+        "name": "ysb-test11",
+        "type": "iso"
+    }
+  },
+  "spec": {
+    "nodeName": "133.133.135.134",
+    "lifecycle": {
+      "createDiskExternalSnapshot": {
+                "domain": "ybs-test3",
+                "format": "qcow2",
+                "name": "ybs-test11",
+                "pool": "data134",
+                "source": "ljx0",
+                "type": "cephfs"
+      }
+    }
+  }
+}
+

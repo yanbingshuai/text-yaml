@@ -1,0 +1,44 @@
+{
+        "apiVersion": "doslab.io/v1",
+        "kind": "Frontend",
+        "metadata": {
+                "name": "doslab.io.zone-create"
+        },
+        "spec": {
+                "template": {
+                        "apiVersion": "doslab.io/v1",
+                        "kind": "Zone"
+                },
+                "stepName": [{
+                        "title": "基础信息"
+                }, {
+                        "title": "确认信息"
+                }],
+                "data": {
+                        "step1": {
+                                 "group1": {
+                                                "constants": {
+                                                                   "introduction": {
+                                                                                           "label": "简介",
+                                                                                           "type": "textbox"
+                                                                   }
+                                                },
+                                                "variables": {
+                                                                   "metadata.name": {
+                                                                                           "label": "名称",
+                                                                                           "regexp": [
+                                                                                             "A-Za-z"
+                                                                                           ],
+                                                                                           "path": "metadata.name",
+                                                                                           "type": "text"
+                                                                   }
+                                                }
+                                  }
+                        },
+                        "step2": {
+                                "group": "confirm"
+                        }
+                }
+        }
+}
+

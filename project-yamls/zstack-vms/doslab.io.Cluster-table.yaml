@@ -1,0 +1,70 @@
+{
+  "apiVersion": "doslab.io/v1",
+  "kind": "Frontend",
+  "metadata": {
+    "name": "doslab.io.cluster-table"
+  },
+  "spec": {
+    "data": [
+      {
+        "title": "名称",
+        "fixed": "left",
+        "width": "240px",
+        "row": "metadata.name"
+      },
+      {
+        "title": "CPU架构",
+        "width": "150px",
+        "row": "spec.domain.vcpu._current"
+      },
+      {
+        "title": "虚拟化技术",
+        "width": "150px",
+        "row": "spec.powerstate"
+      },
+      {
+        "title": "物理机数量",
+        "width": "150px",
+        "row": "metadata.managedFields[0].time"
+      },
+      {
+        "title": "CPU使用率",
+        "width": "200px",
+        "row": "metadata.managedFields[0].time"
+      },
+      {
+        "title": "内存使用率",
+        "width": "200px",
+        "row": "metadata.managedFields[0].time"
+      },
+      {
+        "title": "启用状态",
+        "width": "150px",
+        "row": "metadata.managedFields[0].time"
+      },
+      {
+        "title": "创建时间",
+        "width": "200px",
+        "row": "metadata.managedFields[0].time"
+      },
+      {
+        "kind": "action",
+        "title": "操作",
+        "fixed": "right",
+        "width": "100px",
+        "actionLink": [
+          {
+            "label": "更新",
+            "action": "UPDATE"
+          },
+          {
+            "label": "删除云盘",
+            "action": "DELETE"
+          }
+        ]
+      }
+    ],
+    "type": "table"
+  }
+}
+

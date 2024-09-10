@@ -1,0 +1,12 @@
+{
+  "metadata":{
+    "name":"pod-desc"
+  },
+  "apiVersion":"doslab.io/v1",
+  "kind":"Frontend",
+  "spec":{
+    "title": "单体应用Pod",
+    "desc": "单体应用（Pod）是 Kubernetes 应用程序的基本执行单元，是您创建或部署的 Kubernetes 对象模型中最小和最简单的单元。",
+    "type": "description"
+  }
+}

@@ -1,0 +1,103 @@
+{
+        "apiVersion": "doslab.io/v1",
+        "kind": "Frontend",
+        "metadata": {
+                "name": "doslab.io.virtualmachinesnapshot-create"
+        },
+        "spec": {
+                "template": {
+                        "apiVersion": "doslab.io/v1",
+                        "kind": "VirtualMachineDiskImage"
+                },
+                "stepName": [{
+                        "title": "基础信息"
+                },{
+                        "title": "确认信息"
+                }],
+                "data": {
+                        "step1": {
+                                "group1": {
+                                        "tabKey": "基本信息",
+                                        "constants": {
+                                                "introduction": {
+                                                        "label": "简介",
+                                                        "type": "textbox"
+                                                }
+                                        },
+                                        "variables": {
+                                                "spec.nodename": {
+                                                        "kind": "Node",
+                                                        "label": "选择物理机",
+                                                        "row": "status.addresses[0].address",
+                                                        "path": "spec.nodename",
+                                                        "name": null,
+                                                        "type": "combox"
+                                                },
+                                                "metadata.labels.name": {
+                                                        "path": "metadata.labels.name",
+                                                        "label": "名称",
+                                                        "regexp": [
+                                                                "A-Za-z"
+                                                        ],
+                                                        "type": "text"
+                                                }
+                                        }
+                                },
+                                "group2": {
+                                        "variables": {
+                                                "spec.lifecycle.createDiskExternalSnapshot.pool": {
+                                                        "path": "spec.lifecycle.createDiskExternalSnapshot.pool",
+                                                        "label": "选择主存储",
+                                                        "kind": "doslab.io.VirtualMachinePool",
+                                                        "row": "metadata.name",
+                                                        "type": "combox",
+                                                        "required": "true"
+                                                },
+                                                "spec.lifecycle.createDiskExternalSnapshot.source": {
+                                                        "label": "选择云盘",
+                                                        "type": "combox",
+                                                        "path": "spec.lifecycle.createDiskExternalSnapshot.source",
+                                                        "row": "metadata.name",
+                                                        "kind": "doslab.io.VirtualMachineDisk",
+                                                        "required": "true"
+                                                },
+                                                "spec.lifecycle.createDiskExternalSnapshot.domain": {
+                                                        "label": "使用选择云盘的云主机",
+                                                        "type": "combox",
+                                                        "path": "spec.lifecycle.createDiskExternalSnapshot.domain",
+                                                        "row": "metadata.labels.name",
+                                                        "kind": "doslab.io.VirtualMachine"
+                                                },
+                                                "spec.lifecycle.createDiskExternalSnapshot.name": {
+                                                        "label": "云盘名",
+                                                        "type": "text",
+                                                        "path": "spec.lifecycle.createDiskExternalSnapshot.name",
+                                                        "required": "true"
+                                                },
+                                                "spec.lifecycle.createDiskExternalSnapshot.type": {
+                                                        "label": "类型",
+                                                        "type": "number",
+                                                        "data": [
+                                                              { "label": "localfs", "value": "value1"},
+                                                              { "label": "cephfs", "value": "value2"}
+                                                        ],
+                                                        "path": "spec.lifecycle.createDiskExternalSnapshot.type"
+                                                },
+                                                "spec.lifecycle.createDiskExternalSnapshot.format": {
+                                                        "label": "选择云盘快照格式",
+                                                        "type": "radio",
+                                                        "data": [
+                                                               "qcow2"
+                                                        ],
+                                                        "path": "spec.lifecycle.createDiskExternalSnapshot.format"
+                                                }
+                                        }
+                                }
+                       },
+                              "step2": {
+                              "group": "confirm"
+                       }
+                }
+        }
+}
+

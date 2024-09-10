@@ -1,0 +1,13 @@
+{
+        "metadata": {
+                "name": "node-desc"
+        },
+        "apiVersion": "doslab.io/v1",
+        "kind": "Frontend",
+        "spec": {
+                "title": "物理机",
+                "desc": "为云主机实例提供计算、网络、存储等资源的物理主机。",
+                "type": "description"
+        }
+}
+

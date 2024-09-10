@@ -1,0 +1,13 @@
+{
+  "metadata":{
+    "name":"persistentvolumeclaim-desc"
+  },
+  "apiVersion":"doslab.io/v1",
+  "kind":"Frontend",
+  "spec":{
+    "title": "持久卷声明",
+    "desc": "持久卷声明定义了存储需求，系统根据持久卷声明创建持久卷。",
+    "type": "description"
+  }
+}
+

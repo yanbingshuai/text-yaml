@@ -1,0 +1,43 @@
+{
+    "metadata": {
+        "name": "cronjob-create"
+    },
+    "apiVersion": "doslab.io/v1",
+    "kind": "Frontend",
+    "spec": {
+        "data": {
+            "apiVersion": "batch/v1",
+            "kind": "CronJob",
+            "metadata": {
+                "name": "hello-cronjob"
+            },
+            "spec": {
+                "schedule": "0 0 * * *",
+                "jobTemplate": {
+                    "spec": {
+                        "template": {
+                            "metadata": {
+                                "name": "hello-cronjob"
+                            },
+                            "spec": {
+                                "containers": [
+                                    {
+                                        "name": "hello",
+                                        "image": "busybox",
+                                        "args": [
+                                            "/bin/sh",
+                                            "-c",
+                                            "echo Hello, Kubernetes!"
+                                        ]
+                                    }
+                                ],
+                                "restartPolicy": "OnFailure"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "type": "create"
+    }
+}

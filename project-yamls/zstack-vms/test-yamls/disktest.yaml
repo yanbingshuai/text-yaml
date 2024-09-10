@@ -1,0 +1,24 @@
+{
+  "apiVersion": "doslab.io/v1",
+  "kind": "VirtualMachineDisk",
+  "metadata": {
+    "name": "disk-test8",
+    "labels": {
+        "name": "disk-test8",
+        "host": "133.133.135.134"
+    }
+  },
+  "spec": {
+    "nodeName": "133.133.135.134",
+    "lifecycle": {
+      "createDisk": {
+        "type": "cephfs",
+        "pool": "data134",
+        "capacity": "10G",
+        "format": "qcow2",
+        "vol": "disk1"
+      }
+    }
+  }
+}
+

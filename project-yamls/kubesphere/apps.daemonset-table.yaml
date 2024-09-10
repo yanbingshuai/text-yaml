@@ -1,0 +1,59 @@
+{
+  "apiVersion": "doslab.io/v1",
+  "kind": "Frontend",
+  "metadata": {
+    "name": "apps.daemonset-table"
+  },
+  "spec": {
+    "data": [
+      {
+        "title": "名称",
+        "fixed": "left",
+        "width": "500px",
+        "kind": "link",
+        "row": "metadata.name"
+      },
+      {
+        "title": "正常pod数",
+        "width": "200px",
+        "row": "status.numberReady"
+      },
+      {
+        "title": "项目",
+        "width": "300px",
+        "row": "metadata.namespace"
+      },
+      {
+        "title": "创建时间",
+        "width": "200px",
+        "row": "metadata.creationTimestamp"
+      },
+      {
+        "kind": "action",
+        "fixed": "right",
+        "width": "100px",
+        "title": "操作",
+        "actionLink": [
+          {
+            "label": "编辑",
+            "action": "UPDATE"
+          },
+          {
+            "label": "启用",
+            "action": "UPDATE"
+          },
+          {
+            "label": "停用",
+            "action": "UPDATE"
+          },
+          {
+            "label": "删除",
+            "action": "DELETE"
+          }
+        ]
+      }
+    ],
+    "type": "table"
+  }
+}
+

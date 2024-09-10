@@ -1,0 +1,12 @@
+{
+  "metadata":{
+    "name":"apps.deployment-desc"
+  },
+  "apiVersion":"doslab.io/v1",
+  "kind":"Frontend",
+  "spec":{
+    "title": "微服务应用",
+    "desc": "微服务应用（Deployment）是Pod的集合，且多个Pod是等价的。",
+    "type": "description"
+  }
+}

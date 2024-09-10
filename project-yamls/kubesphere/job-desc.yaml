@@ -1,0 +1,13 @@
+{
+  "metadata":{
+    "name":"batch.job-desc"
+  },
+  "apiVersion":"doslab.io/v1",
+  "kind":"Frontend",
+  "spec":{
+    "title": "任务",
+    "desc": "任务（Job）用于运行短暂的一次性任务。任务会创建一个或多个容器组，并保证指定数量的容器组成功结束。",
+    "type": "description"
+  }
+}
+

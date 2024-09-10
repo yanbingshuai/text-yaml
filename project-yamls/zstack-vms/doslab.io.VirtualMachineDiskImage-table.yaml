@@ -1,0 +1,58 @@
+{
+  "apiVersion": "doslab.io/v1",
+  "kind": "Frontend",
+  "metadata": {
+    "name": "doslab.io.virtualmachinediskimage-table"
+  },
+  "spec": {
+    "data": [
+      {
+        "title": "名称",
+        "width": "240px",
+        "row": "metadata.name"
+      },
+      {
+        "title": "类型",
+        "width": "150px",
+        "row": "spec.volume.target.format._type"
+      },
+      {
+        "title": "路径",
+        "width": "150px",
+        "row": "spec.volume.target.path.text"
+      },
+      {
+        "title": "启用状态",
+        "width": "150px",
+        "row": "spec.powerstate"
+      },
+      {
+        "title": "所在节点",
+        "width": "200px",
+        "row": "spec.nodeName"
+      },
+      {
+        "title": "创建时间",
+        "width": "200px",
+        "row": "metadata.creationTimestamp"
+      },
+      {
+        "kind": "action",
+        "title": "更多操作",
+        "width": "100px",
+        "actionLink": [
+          {
+            "label": "更新",
+            "action": "UPDATE"
+          },
+          {
+            "label": "删除",
+            "action": "DELETE"
+          }
+        ]
+      }
+    ],
+    "type": "table"
+  }
+}
+
